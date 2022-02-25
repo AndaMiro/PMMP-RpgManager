@@ -65,7 +65,7 @@ class RpgEvent implements Listener{
 		}
 		$event->setBaseDamage(max(0, $damage));
   }
-
+/*
 	public function onMove(PlayerMoveEvent $event) : void{
 		$player = $event->getPlayer();
 		$statManager = StatManager::getStatManager($player);
@@ -77,7 +77,7 @@ class RpgEvent implements Listener{
 		$text .= "체력 : " . ($statManager->getStatHealth()) . "\n";
 		$player->sendTip($text);
 	}
-
+*/
 	public function onDataPacketReceive(DataPacketReceiveEvent $event) : void{
 		$packet = $event->getPacket();
 		if($packet instanceof InventoryTransactionPacket or $packet instanceof ContainerClosePacket or $packet instanceof MobEquipmentPacket) EquipmentManager::getEquipmentManager($event->getOrigin()->getPlayer())->updateEquipment();
