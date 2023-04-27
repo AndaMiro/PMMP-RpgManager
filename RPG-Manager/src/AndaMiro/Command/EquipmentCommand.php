@@ -1,6 +1,6 @@
 <?php
 
-namespace AndaMiro\Command;
+namespace AndaMiro\command;
 
 use pocketmine\command\{Command, CommandSender};
 
