@@ -14,7 +14,7 @@ use pocketmine\entity\Attribute;
 
 use pocketmine\scheduler\ClosureTask;
 
-use AndaMiro\Command\{EquipmentCommand, StatCommand, JobCommand};
+use AndaMiro\command\{EquipmentCommand, StatCommand, JobCommand};
 
 use AndaMiro\equipment\EquipmentManager;
 use AndaMiro\stat\StatManager;
