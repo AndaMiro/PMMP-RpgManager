@@ -36,6 +36,7 @@ class RpgEvent implements Listener{
 		LevelManager::getLevelManager($event->getPlayer())->updateExperienceProgress();
 	}
 
+/*
 	public function onInteract(PlayerInteractEvent $event) : void{
 		if($event->getItem()->getId() == 0){
 			$event->getPlayer()->sendMessage("RESET");
@@ -46,25 +47,26 @@ class RpgEvent implements Listener{
 			$event->getPlayer()->sendMessage("ADD");
 		}
 	}
+*/
 
 	public function onFight(EntityDamageEvent $event) : void{
 		$entity = $event->getEntity();
 		$damage = $event->getBaseDamage();
-    if($event instanceof EntityDamageByEntityEvent){
+    		if($event instanceof EntityDamageByEntityEvent){
 			$damager = $event->getDamager();
-	    if($damager instanceof Player){
+	    		if($damager instanceof Player){
 				$statManager = StatManager::getStatManager($damager);
 				$critical = $statManager->getCriticalDamage();
-	      $damage += $statManager->getStatDamage() + EquipmentManager::getEquipmentManager($damager)->getEquipmentDamage() + $critical;
+	      			$damage += $statManager->getStatDamage() + EquipmentManager::getEquipmentManager($damager)->getEquipmentDamage() + $critical;
 				if($critical > 0) $damager->sendPopup("크리티컬!");
-	    }
+	    		}
 		}
 		if($entity instanceof Player){
 			$statManager = StatManager::getStatManager($entity);
 			$damage -= $statManager->getStatDefense() + EquipmentManager::getEquipmentManager($entity)->getEquipmentDefense();
 		}
 		$event->setBaseDamage(max(0, $damage));
-  }
+  	}
 /*
 	public function onMove(PlayerMoveEvent $event) : void{
 		$player = $event->getPlayer();
