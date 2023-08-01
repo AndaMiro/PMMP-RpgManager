@@ -25,27 +25,27 @@ abstract class Stat{
 **/
 
   public function getDamage() : float{
-    return $this->getLevel() * $this::STAT_DAMAGE;
+    return $this->level * $this::STAT_DAMAGE;
   }
 
   public function getDefense() : float{
-    return $this->getLevel() * $this::STAT_DEFENSE;
+    return $this->level * $this::STAT_DEFENSE;
   }
 
   public function getHealth() : float{
-    return $this->getLevel() * $this::STAT_HEALTH;
+    return $this->level * $this::STAT_HEALTH;
   }
 
   public function getCriticalDamage() : float{
-    return $this->getLevel() * $this::STAT_CRITICAL_DAMAGE;
+    return $this->level * $this::STAT_CRITICAL_DAMAGE;
   }
 
   public function getCriticalPercent() : float{
-    return $this->getLevel() * $this::STAT_CRITICAL_PERCENT;
+    return $this->level * $this::STAT_CRITICAL_PERCENT;
   }
 
   public function getAbilityDamage() : float{
-    return $this->getLevel() * $this::STAT_ABILITY_DAMAGE;
+    return $this->level * $this::STAT_ABILITY_DAMAGE;
   }
 
 /**
